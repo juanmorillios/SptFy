@@ -1,5 +1,17 @@
 <div class="row">
     <div class='col'>
-        <input type="text" (keyup)="buscar()" class="form-control">
+        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar Artista...">
     </div>
 </div>
+
+
+<div class="card-columns">
+    <div *ngFor="let artista of artistas" class="card">
+        <img [src]="artista.images[0].url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ artista.name }}</h5>
+            <p class="card-text">
+                <span *ngFor="let artista of artista.artists" class="badge badge-pill badge-primary">{{ artista.name }}</span>
+            </p>
+        </div>
+    </div>
