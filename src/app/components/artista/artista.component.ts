@@ -24,7 +24,6 @@ export class ArtistaComponent {
 
     });
   }
-
   getArtista( id: string ) {
     this.loadingArtist = true;
     this.spotify.getArtista( id )
